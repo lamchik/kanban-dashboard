@@ -3,6 +3,7 @@ import {SideBarHeader} from "./SideBarHeader/SideBarHeader";
 import arrow from '../../assets/images/arrow-down.svg'
 import avatar from '../../assets/images/user-avatar.png'
 import {SideBarTools} from "./SideBarTools/SideBarTools";
+import {UserAvatar} from "../UI/UserAvatar/UserAvatar";
 
 export const SideBar = () => {
 
@@ -32,10 +33,6 @@ export const SideBar = () => {
   const Title = styled.p`
     color: #fff;
     font-size: .875rem;
-  `
-  const StyledAvatar = styled.img`
-    width: 1.375rem;
-    height: 1.375rem;
   `
 
   const MenuChaptersContainer = styled.div`
@@ -69,7 +66,7 @@ export const SideBar = () => {
       <MainMenu>
         <SideBarHeader/>
         <UserWrapper>
-          <StyledAvatar src={avatar} alt='avatar'/>
+          <UserAvatar width='1.375rem' height='1.375rem'/>
           <Title>My workspace</Title>
         </UserWrapper>
 
@@ -85,6 +82,7 @@ export const SideBar = () => {
             <img src={arrow} alt='arrow'/>
             <Title>My projects</Title>
           </MenuChapter>
+
           <Text>Marketing</Text>
           <Text>Lending Pages</Text>
           <Text>Wedding</Text>
