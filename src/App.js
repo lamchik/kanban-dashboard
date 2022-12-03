@@ -1,8 +1,9 @@
+import {SideBar} from "./components/SideBar/SideBar";
 
 function App() {
   return (
     <div>
-     <p>KANBAN</p>
+      <SideBar/>
     </div>
   );
 }
