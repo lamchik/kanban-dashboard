@@ -60,6 +60,7 @@ export const SideBarTools = () => {
     font-size: .875rem;
     line-height: 1rem;
     color: ${props => props.color};
+    word-break: break-all;
   `
 
 
