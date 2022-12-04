@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {SideBar} from "./components/SideBar/SideBar";
 import {Header} from "./components/Header/Header";
+import {TableHeader} from "./components/TablesHeader/TableHeader";
 
 function App() {
   const Container = styled.div`
@@ -19,6 +20,7 @@ function App() {
 
       <MainPage>
         <Header/>
+        <TableHeader/>
       </MainPage>
 
     </Container>

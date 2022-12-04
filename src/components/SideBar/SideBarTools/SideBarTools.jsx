@@ -63,8 +63,6 @@ export const SideBarTools = () => {
     word-break: break-all;
   `
 
-
-
   return (
     <Tools>
       <Header>Tools</Header>
