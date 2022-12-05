@@ -1,58 +1,55 @@
-import {useCallback, useState} from "react";
-import {DndProvider} from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
 import styled from "styled-components";
-import update from "immutability-helper";
 
-import {columns} from "../../assets/mock/mock";
-import {tasks as tasksMock} from "../../assets/mock/mock";
-import {Column} from "../Column/Column";
-import {TaskCard} from "../TaskCard/TaskCard";
+import {Title} from "../UI/Title/Title";
+import {ColumnsList} from "../ColumnsList/ColumnsList";
+import plus from '../../assets/images/plus-grey.svg'
 
-const TableStyled = styled.div`
-  width: 60.9vw;
+const Container = styled.div`
   display: flex;
-  justify-content: space-around;
-  min-height: 47.5rem;
-  padding-left: .625rem;
-  box-sizing: border-box;
+  align-items: baseline;
 `
+
+const ButtonContainer = styled.div`
+  width: 100%;
+  padding: 1.5625rem 0 1.02rem 2.25rem;
+  border-bottom: 1px solid #F3F3F3;
+  border-left: 1px solid #F3F3F3;
+`
+
+const Button = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: .2s linear;
+  :hover {
+    opacity: 0.7;
+  }
+`
+
+const AddIcon = styled.img`
+  margin-right: 0.25rem;
+`
+
 export const Table = () => {
 
-  const [tasks, setTaskStatus] = useState(tasksMock);
-
-  const changeTaskStatus = useCallback(
-    (id, status) => {
-      let task = tasks.find(task => task.id === id);
-      const taskIndex = tasks.indexOf(task);
-      task = { ...task, status };
-      let newTasks = update(tasks, {
-        [taskIndex]: { $set: task }
-      });
-      setTaskStatus(newTasks);
-    },
-    [tasks]
-  );
-
   return (
-    <DndProvider backend={HTML5Backend}>
-      <TableStyled>
-        {columns.map((column) =>
-          <Column
-            key={column.id}
-            title={column.title}
-            status={column.title}
-            changeTaskStatus={changeTaskStatus}
-          >
-            {tasks
-              .filter(item => item.status === column.title)
-              .map(item => (
-                <TaskCard key={item.id} id={item.id} title={item.title} time={item.time} color={item.color}/>
-              ))}
-          </Column>
-        )}
-      </TableStyled>
-    </DndProvider>
-  )
+    <Container>
 
+      <ColumnsList/>
+
+      <ButtonContainer>
+        <Button slot='2.25rem'>
+          <AddIcon src={plus} alt='plus-icon'/>
+          <Title color='#8C939F' title='400'>Create status</Title>
+        </Button>
+      </ButtonContainer>
+
+
+    </Container>
+
+  )
 }

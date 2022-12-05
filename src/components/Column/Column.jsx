@@ -5,14 +5,17 @@ import styled from "styled-components";
 
 const StyledColumn = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-right: 1px solid #F3F3F3;
   padding: 2.4375rem .625rem .625rem;
   box-sizing: border-box;
+  border-top: 1px solid #F3F3F3;
+
 `
-export const Column = ({children, title, changeTaskStatus, status}) => {
+export const Column = ({children, changeTaskStatus, status}) => {
 
   const ref = useRef(null);
   const [, drop] = useDrop({
@@ -25,7 +28,7 @@ export const Column = ({children, title, changeTaskStatus, status}) => {
   drop(ref);
 
   return (
-    <StyledColumn ref={ref} title={title}>
+    <StyledColumn ref={ref}>
       {children}
     </StyledColumn>
   )
