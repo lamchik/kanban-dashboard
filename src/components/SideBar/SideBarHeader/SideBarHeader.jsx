@@ -1,17 +1,18 @@
 import styled from "styled-components";
+
 import {Search} from "../../UI/Search/Search";
 import {ReactComponent as BordioLogo} from "../../../assets/images/bordio-logo.svg";
 
-export const SideBarHeader = () => {
+const StylesWrapper = styled.div`
+  background-color: #0F1D40;
+  padding: 1.625rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.625rem;
+`
 
-  const StylesWrapper = styled.div`
-    background-color: #0F1D40;
-    padding: 1.625rem 1rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 1.625rem;
-  `
+export const SideBarHeader = () => {
 
   return (
     <StylesWrapper>

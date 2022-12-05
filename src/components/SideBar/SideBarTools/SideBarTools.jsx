@@ -6,8 +6,6 @@ import roadmap from '../../../assets/images/roadmap-icon.svg'
 import schedule from '../../../assets/images/schedule-icon.svg'
 import tasks from '../../../assets/images/tasks-icon.svg'
 
-export const SideBarTools = () => {
-
   const Tools = styled.div`
     width: 42%;
     background-color: #F5F8FA;
@@ -62,6 +60,8 @@ export const SideBarTools = () => {
     color: ${props => props.color};
     word-break: break-all;
   `
+
+export const SideBarTools = () => {
 
   return (
     <Tools>

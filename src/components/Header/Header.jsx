@@ -9,69 +9,69 @@ import {UserAvatar} from "../UI/UserAvatar/UserAvatar";
 import {Notifications} from "../UI/Notifications/Notifications";
 
 
+const Container = styled.div`
+  min-height: 2rem;
+  width: 100%;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px #F0F1F2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const StyledText = styled.p`
+  font-size: .875rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+`
+
+const FiltersHeader = styled.div`
+  display: flex;
+  gap: 1rem;
+`
+
+const DropDownItems = styled.div`
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  background: #fff;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 8.25rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border-radius: .5rem;
+  padding: .375rem;
+  box-sizing: border-box;
+`
+
+const DropDownItem = styled.p`
+  padding: .75rem .5rem;
+  font-size: .875rem;
+  line-height: 1rem;
+  border-radius: 4px;
+  color: #000000;
+  transition: .2s linear;
+  &:hover {
+    background-color: #F5F8FA;
+  }
+`
+
+const InfoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.4375rem;
+`
+
+const NotificationButton = styled.button`
+  position: relative;
+  display: flex;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+`
 export const Header = () => {
-  const Container = styled.div`
-    min-height: 2rem;
-    width: 100%;
-    padding: 1.25rem;
-    box-sizing: border-box;
-    box-shadow: 0 2px 4px #F0F1F2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  `
-
-  const StyledText = styled.p`
-    font-size: .875rem;
-    line-height: 1rem;
-    color: #FFFFFF;
-  `
-
-  const FiltersHeader = styled.div`
-    display: flex;
-    gap: 1rem;
-  `
-
-  const DropDownItems = styled.div`
-    position: absolute;
-    top: 3rem;
-    left: 0;
-    background: #fff;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    width: 8.25rem;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    border-radius: .5rem;
-    padding: .375rem;
-    box-sizing: border-box;
-  `
-
-  const DropDownItem = styled.p`
-    padding: .75rem .5rem;
-    font-size: .875rem;
-    line-height: 1rem;
-    border-radius: 4px;
-    color: #000000;
-    transition: .2s linear;
-    &:hover {
-      background-color: #F5F8FA;
-    }
-  `
-
-  const InfoWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 1.4375rem;
-  `
-
-  const NotificationButton = styled.button`
-    position: relative;
-    display: flex;
-    border: none;
-    background-color: #ffffff;
-    cursor: pointer;
-  `
 
   return (
     <Container>
