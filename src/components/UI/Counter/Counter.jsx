@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {useCallback, useEffect, useState} from "react";
+import {tasks as tasksMock} from "../../../assets/mock/mock";
 
 const CounterStyled = styled.div`
   display: flex;
@@ -17,11 +19,11 @@ const Number = styled.p`
   color: #8C939F;
 `
 
-export const Counter = ({number}) => {
+export const Counter = ({children}) => {
 
   return (
     <CounterStyled>
-      <Number>{number}</Number>
+      <Number>{children}</Number>
     </CounterStyled>
   )
 }

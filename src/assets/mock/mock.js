@@ -12,7 +12,7 @@ export const tasks = [
     title: 'Compare PPC agencies and make a report for Steven',
     time: '3:00h',
     color: '#D8DCFF',
-    status: 'In progress'
+    status: 'New task'
   },
 
   {
@@ -20,7 +20,7 @@ export const tasks = [
     title: 'Meeting with Amanda (PR department)',
     time: '0:30h',
     color: '#ABE9CE',
-    status: 'In progress'
+    status: 'New task'
   },
 
   {
@@ -36,7 +36,7 @@ export const tasks = [
     title: 'Check email',
     time: '0:20h',
     color: '#FFDFBA',
-    status: 'New task'
+    status: 'Scheduled'
   },
 
   {
@@ -52,7 +52,7 @@ export const tasks = [
     title: 'New Ad copies for Manamaja',
     time: '2:00h',
     color: '#D9E6A2',
-    status: 'In progress'
+    status: 'Scheduled'
   },
 
   {
@@ -60,15 +60,15 @@ export const tasks = [
     title: 'Check email',
     time: '0:20h',
     color: '#FFDFBA',
-    status: 'Scheduled'
+    status: 'In progress'
   },
 
   {
     id: 9,
     title: 'Record a video comment about last week\'s analytics report',
     time: '0:20h',
-    color: '#FFDFBA',
-    status: 'New task'
+    color: '#F2BAE1',
+    status: 'In progress'
   },
 
   {
@@ -76,14 +76,14 @@ export const tasks = [
     title: 'Process all resumes for Content Marketer position',
     time: '1:00h',
     color: '#FFDFBA',
-    status: 'Scheduled'
+    status: 'In progress'
   },
 
   {
     id: 11,
     title: 'Check email',
     time: '0:20h',
-    color: '#F0F0F0',
+    color: '#FFDFBA',
     status: 'Completed'
   },
 
@@ -91,7 +91,7 @@ export const tasks = [
     id: 12,
     title: 'Check email',
     time: '0:20h',
-    color: '#F0F0F0',
+    color: '#D8DCFF',
     status: 'Completed'
   },
 ]

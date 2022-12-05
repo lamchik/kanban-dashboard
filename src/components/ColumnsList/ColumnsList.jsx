@@ -1,4 +1,4 @@
-import {useCallback, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {DndProvider} from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import styled from "styled-components";
@@ -12,9 +12,8 @@ import {Counter} from "../UI/Counter/Counter";
 import {Title} from "../UI/Title/Title";
 
 const ColumnsListStyled = styled.div`
-  //width: 60.9vw;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   min-height: 47.5rem;
   padding-left: .625rem;
   box-sizing: border-box;
@@ -25,8 +24,7 @@ const ColumnContainer = styled.div`
   align-items: center;
   flex-direction: column;
   padding-left: ${props => props.slot};
-  
-  //border-right: 1px solid #F3F3F3;
+  min-width: 15rem;
 `
 
 const TitleContainer = styled.div`
@@ -43,6 +41,7 @@ const TitleContainer = styled.div`
 export const ColumnsList = () => {
 
   const [tasks, setTaskStatus] = useState(tasksMock);
+  const [tasksCount, setTasksCount] = useState(0)
 
   const changeTaskStatus = useCallback(
     (id, status) => {
@@ -57,17 +56,25 @@ export const ColumnsList = () => {
     [tasks]
   );
 
+  useEffect(() => {
+    columns.forEach(item => {
+      let tasks = tasksMock.filter(task => task.status === item.title)
+      setTasksCount(tasks.length)
+    })
+  }, [tasksCount])
+
+
   return (
     <DndProvider backend={HTML5Backend}>
       <ColumnsListStyled>
         {columns.map((column) =>
-          <ColumnContainer>
+          <ColumnContainer key={column.id}>
             <TitleContainer>
-              <Title color='#222222'>{column.title}</Title>
-              <Counter number='7'/>
+              <Title color='#222222' fontWeight='500'>{column.title}</Title>
+              <Counter>{tasks
+                .filter(item => item.status === column.title).length}</Counter>
             </TitleContainer>
             <Column
-              key={column.id}
               title={column.title}
               status={column.title}
               changeTaskStatus={changeTaskStatus}
@@ -81,11 +88,11 @@ export const ColumnsList = () => {
                     title={item.title}
                     time={item.time}
                     color={item.color}
+                    isCompleted={item.status === 'Completed'}
                   />
                 ))}
             </Column>
           </ColumnContainer>
-
         )}
       </ColumnsListStyled>
     </DndProvider>

@@ -5,7 +5,8 @@ import {ColumnsList} from "../ColumnsList/ColumnsList";
 import plus from '../../assets/images/plus-grey.svg'
 
 const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   align-items: baseline;
 `
 
@@ -44,7 +45,7 @@ export const Table = () => {
       <ButtonContainer>
         <Button slot='2.25rem'>
           <AddIcon src={plus} alt='plus-icon'/>
-          <Title color='#8C939F' title='400'>Create status</Title>
+          <Title color='#8C939F' fontWeight='400'>Create status</Title>
         </Button>
       </ButtonContainer>
 
