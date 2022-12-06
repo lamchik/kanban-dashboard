@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import {useCallback, useEffect, useState} from "react";
-import {tasks as tasksMock} from "../../../assets/mock/mock";
 
 const CounterStyled = styled.div`
   display: flex;
