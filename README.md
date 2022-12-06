@@ -12,4 +12,11 @@ https://lamchik.github.io/kanban-dashboard/
 
 Реализовала открытие ДропДауна
 
+Стек:
+
+* React
+* Styled-Component
+* React DnD
+
+
 
